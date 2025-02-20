@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}首页{% endblock %}\
+{% block head %}
+    <script type="text/javascript" src="http://echarts.baidu.com/dist/echarts.js"></script>
+    <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet">
+    <script src="https://vjs.zencdn.net/7.11.4/video.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/videojs-contrib-hls@5.15.0/dist/videojs-contrib-hls.js"></script>
+{% endblock %}
+
+{% block body %}
+{#<div id="main" style="width: 900px;height:470px;"></div>#}
+
+<!-- video.js 播放器容器 -->
+<div style="display: flex;flex-wrap: wrap; width:80%; height:100%;justify-content: center">
+{#    <div style="display: flex; flex-wrap: wrap; width:90%; height:90%">#}
+        {% for stream_url in stream_urls %}
+            <video id="my-video" class="video-js vjs-default-skin" controls autoplay preload="auto" playsinline width="540px" height="320px" data-setup='{}'>
+                <source src="{{stream_url}}" type="application/x-mpegURL">
+            </video>
+        {% endfor %}
+
+{#    </div>#}
+</div>
+
+{#<script>#}
+{#    // 初始化 video.js 播放器#}
+{#    var player = videojs('my-video{{ temp1 }}');#}
+{##}
+{#    // 使用 video.js 的 HLS 插件#}
+{#    player.play();#}
+{#</script>#}
+
+{% endblock %}
+<body>
+
+<style scoped>
+.con {
+    display: flex;
+    flex-wrap:wrap
+}
+
+.video-js {
+    margin: 0px;
+
+}
+</style>
+
+</body>
+
+
+

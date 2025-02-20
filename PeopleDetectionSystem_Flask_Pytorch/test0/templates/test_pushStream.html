@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Video Stream</title>
+</head>
+<body>
+    <div id="video-container"></div>
+
+    <script>
+        // 创建一个事件源（EventSource）对象，用于从服务器接收实时数据
+        const eventSource = new EventSource('/video_feed');
+
+        // 在页面上找到用于显示视频的容器
+        const videoContainer = document.getElementById('video-container');
+
+        // 监听来自服务器的消息
+        eventSource.onmessage = function(event) {
+            // 解析JSON数据
+            const data = JSON.parse(event.data);
+
+            // 处理视频帧和其他数据
+            const frame = data.frame;
+            const otherData = data.other_data;
+
+            // 创建一个图像元素并设置图像源
+            const imgElement = document.createElement('img');
+            imgElement.src = `data:image/jpeg;base64,${frame}`;
+
+            // 在页面上显示图像
+            videoContainer.innerHTML = '';
+            videoContainer.appendChild(imgElement);
+
+            // 处理其他数据，可以根据需要进行操作
+            console.log('Other Data:', otherData);
+        };
+
+        // 监听事件源的错误事件
+        eventSource.onerror = function(event) {
+            console.error('EventSource Error:', event);
+            // 在出现错误时可以处理相应的逻辑
+        };
+
+        // 在页面上添加一个按钮，用于停止视频流
+        const stopButton = document.createElement('button');
+        stopButton.innerText = 'Stop Video';
+        stopButton.onclick = function() {
+            eventSource.close();  // 关闭事件源，停止接收数据
+        };
+        document.body.appendChild(stopButton);
+    </script>
+</body>
+</html>
+
+

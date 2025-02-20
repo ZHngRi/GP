@@ -1,0 +1,10 @@
+# -*- coding: utf-8 -*-
+DIALECT = 'mysql'
+DRIVER = 'mysqldb'
+USERNAME = 'zhr'
+PASSWORD = '424512059'
+HOST = '127.0.0.1'
+PORT = '3306'
+DATABSE = 'biye'
+# app.config['SQLALCHEMY_DATABASE_URI']= 'mysql://zhr:424512059@localhost:3306/camera?charset=utf8'
+SQLALCHEMY_DATABASE_URI = 'mysql://zhr:424512059@localhost:3306/camera?charset=utf8'

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Dao/Camera.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Dao/CameraApp.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Dao/Detection.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/camera_management_sys.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dataSet/person_dataset/trans.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/detector_final.py" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/detector_final_copy.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/draw.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model_trial.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pailie.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/peoplePred.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/push_flow_to_hls.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/utils/plots.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/weight/detector_final.py" charset="UTF-8" />
+  </component>
+</project>
